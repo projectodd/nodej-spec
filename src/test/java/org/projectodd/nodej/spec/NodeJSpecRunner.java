@@ -21,7 +21,10 @@ public class NodeJSpecRunner extends Runner {
     private Method shouldRun;
 
     static {
-        System.setProperty("dynjs.require.path", System.getProperty("user.dir") + "/src/main/javascript/node/lib");
+        String testsDir = System.getProperty("user.dir") + "/src/main/javascript/node/lib";
+        String libDir   = System.getProperty("user.dir") + "/src/test/resources/suite";
+        String subDir   = libDir + "/simple";
+        System.setProperty("dynjs.require.path", testsDir + ":" + subDir + ":" + libDir);
         System.setProperty("java.library.path", System.getProperty("user.dir") + "/lib");
     }
 
