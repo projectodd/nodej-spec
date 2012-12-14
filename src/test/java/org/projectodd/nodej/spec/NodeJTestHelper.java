@@ -11,11 +11,11 @@ import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.junit.runner.RunWith;
 
 @RunWith(NodeJSpecRunner.class)
-public class SpecTestHelper {
+public class NodeJTestHelper {
 
 	private String folderName;
 
-	public SpecTestHelper(String folderName) {
+	public NodeJTestHelper(String folderName) {
 		this.folderName = folderName;
 	}
 
@@ -24,11 +24,11 @@ public class SpecTestHelper {
     }
     
 	public Collection<File> files() throws URISyntaxException {
-		return SpecTestHelper.listFiles(this.folderName);
+		return NodeJTestHelper.listFiles(this.folderName);
 	}
     
     public static Collection<File> listFiles(String folderName) throws URISyntaxException {
-        final URL resource = SpecTestHelper.class.getResource("/suite");
+        final URL resource = NodeJTestHelper.class.getResource("/suite");
         if (resource.getProtocol().equals("file")) {
             File suiteDir = new File(resource.toURI());
             File folder = new File(suiteDir, folderName);

@@ -1,10 +1,12 @@
-package org.projectodd.nodej.spec;
+package org.projectodd.nodej.spec.simple;
 
 import java.io.File;
 
-public class NodeJSBufferTest extends SpecTestHelper {
+import org.projectodd.nodej.spec.NodeJTestHelper;
+
+public class BufferTest extends NodeJTestHelper {
     
-    public NodeJSBufferTest() {
+    public BufferTest() {
         super("simple");
     }
     
