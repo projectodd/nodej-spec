@@ -1,7 +1,6 @@
 package org.projectodd.nodej.spec;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -65,8 +64,7 @@ public class NodeJSpecRunner extends Runner {
                     notifier.fireTestStarted(description);
                     Node node = new Node();
                     node.start();
-                    FileInputStream testFile = new FileInputStream(file);
-                    node.execute(testFile, file.getName());
+                    node.execute(file);
                 } catch (Throwable e) {
                     notifier.fireTestFailure(new Failure(description, e));
                 } finally {
